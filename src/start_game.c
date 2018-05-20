@@ -58,14 +58,14 @@ int start_game(void)
 			switch(getchar()) {
 				case 'A':
 					//up arrow
-					dbg( __FILE__, __LINE__, "Up arrow pressed");
+					dbg( "DEBUG: %s [%d]: Up arrow pressed\n", __FILE__, __LINE__);
 					highlighted--;
 					if(highlighted < 0)
 						highlighted = 1;
 					break;
 				case 'B':
 					//down arrow key
-					dbg(__FILE__, __LINE__, "Down arrow pressed");
+					dbg( "DEBUG: %s [%d]: Down arrow pressed\n", __FILE__, __LINE__);
 					highlighted++;
 					if(highlighted > 1)
 						highlighted = 0;
@@ -103,7 +103,7 @@ int start_game(void)
 	}//end while
 
 	//return the option selected code
-	dbg( __FILE__, __LINE__, "Exiting start function\n");
-	dbg( __FILE__, __LINE__, "sending [%d] up to main :)\n", highlighted);
+	dbg( "DEBUG %s [%d]: Exiting start function\n", __FILE__, __LINE__);
+	dbg( "DEBUG %s [%d]: sending [%d] up to main :)\n", __FILE__, __LINE__, highlighted);
 	return highlighted;
 }//end main

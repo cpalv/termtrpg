@@ -11,8 +11,8 @@ int main(void)
 	int rc;
 
 	rc = start_game();
-	printf("Received return code of [%d]\n", rc);
+	dbg("DEBUG %s [%d]: Received return code of [%d]\n", __FILE__, __LINE__, rc);
 
-	printf("Exiting whole game\n");
+	dbg("Exiting whole game\n");
 	exit(EXIT_SUCCESS);
 }//end main

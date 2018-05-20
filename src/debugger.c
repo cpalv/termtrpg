@@ -10,12 +10,21 @@
 #define BUFFSZ 128
 
 
-
+/*
+ * TODO: fix log file being continously truncated
+ *
+ * Expected Behavior:
+ *		Truncate file at initial open
+ *		append all future writes
+ *		possibly need to make a global file descriptor
+ *
+ * TODO: Add time stamp to log file
+ */
 void dbg(const char * msg, ...)
 {
 	char buff[BUFFSZ] = {'\0'};
 	va_list args;
-	int n = 0, fd;
+	int n = 0, bytesw = 0, fd;
 
 	
 	va_start(args, msg);
@@ -24,7 +33,8 @@ void dbg(const char * msg, ...)
 	va_end(args);
 
 	n = strlen(buff);
-	n = write( fd, buff, n);
-	//printf("Wrote %d of %s", n , buff);
-	//sleep(10);
+	bytesw = write( fd, buff, n);
+	if( bytesw < n)
+		write( fd, "Incomplete Write to Log!\n", 26);	// > echo "words" | wc -c 
+														// already includes '\n' in count
 }
