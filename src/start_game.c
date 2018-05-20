@@ -103,7 +103,7 @@ int start_game(void)
 	}//end while
 
 	//return the option selected code
-	printf("Exiting start function\n");
-	printf("sending [%d] up to main :)\n", highlighted);
+	dbg( __FILE__, __LINE__, "Exiting start function\n");
+	dbg( __FILE__, __LINE__, "sending [%d] up to main :)\n", highlighted);
 	return highlighted;
 }//end main
