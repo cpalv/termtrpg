@@ -11,7 +11,7 @@ int main(void)
 	int rc;
 
 	rc = start_game();
-	dbg("DEBUG %s [%d]: Received return code of [%d]\n", __FILE__, __LINE__, rc);
+	dbg("%s [DEBUG] %s [%d]: Received return code of [%d]\n", gettimestamp(), __FILE__, __LINE__, rc);
 
 	dbg("Exiting whole game\n");
 	exit(EXIT_SUCCESS);

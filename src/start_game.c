@@ -7,7 +7,7 @@
 
 const char * opts[2] = {"Start New Game\n", "Load Game\n"};
 
-void print_main_menu(int opt) {
+static void print_main_menu(int opt) {
 
 		switch(opt){
 			case 0:
@@ -29,6 +29,8 @@ void print_main_menu(int opt) {
 		}//end switch
 
 }//end function
+
+/* * * PUBLIC FUNCTIONS * * */
 
 /*
  * TODO: Fix double entering arrow keys problem
@@ -58,14 +60,14 @@ int start_game(void)
 			switch(getchar()) {
 				case 'A':
 					//up arrow
-					dbg( "DEBUG: %s [%d]: Up arrow pressed\n", __FILE__, __LINE__);
+					dbg( "%s [DEBUG] %s [%d]: Up arrow pressed\n", gettimestamp(), __FILE__, __LINE__);
 					highlighted--;
 					if(highlighted < 0)
 						highlighted = 1;
 					break;
 				case 'B':
 					//down arrow key
-					dbg( "DEBUG: %s [%d]: Down arrow pressed\n", __FILE__, __LINE__);
+					dbg( "%s [DEBUG] %s [%d]: Down arrow pressed\n", gettimestamp(), __FILE__, __LINE__);
 					highlighted++;
 					if(highlighted > 1)
 						highlighted = 0;
@@ -103,7 +105,6 @@ int start_game(void)
 	}//end while
 
 	//return the option selected code
-	dbg( "DEBUG %s [%d]: Exiting start function\n", __FILE__, __LINE__);
-	dbg( "DEBUG %s [%d]: sending [%d] up to main :)\n", __FILE__, __LINE__, highlighted);
+	dbg( "%s [DEBUG] %s [%d]: sending [%d] up to main :)\n", gettimestamp(), __FILE__, __LINE__, highlighted);
 	return highlighted;
 }//end main

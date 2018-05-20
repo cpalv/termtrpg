@@ -1,3 +1,3 @@
-#define LOG_FILE "../log/game_log.txt"
+char * gettimestamp();
 void dbg(const char * msg, ...);
 int start_game(void);
