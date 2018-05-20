@@ -1,0 +1,15 @@
+start_game.c [68]: Down arrow pressed
+start_game.c [61]: Up arrow pressed
+start_game.c [61]: Up arrow pressed
+start_game.c [61]: Up arrow pressed
+start_game.c [68]: Down arrow pressed
+start_game.c [61]: Up arrow pressed
+start_game.c [68]: Down arrow pressed
+start_game.c [61]: Up arrow pressed
+start_game.c [68]: Down arrow pressed
+start_game.c [68]: Down arrow pressed
+start_game.c [61]: Up arrow pressed
+start_game.c [61]: Up arrow pressed
+start_game.c [68]: Down arrow pressed
+start_game.c [61]: Up arrow pressed
+start_game.c [68]: Down arrow pressed
