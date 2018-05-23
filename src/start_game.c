@@ -1,11 +1,14 @@
 #include<stdlib.h>
 #include<stdio.h>
+#include<termios.h>
+#include<unistd.h>
 #include"../include/game.h"
 
 #define START_NEW 0
 #define LOAD_GAME 1
 
-const char * opts[2] = {"Start New Game\n", "Load Game\n"};
+const char *opts[2] = {"Start New Game\n", "Load Game\n"};
+static struct termios *orig;	// Original terminal structure to revert changes
 
 static void print_main_menu(int opt) {
 
@@ -31,6 +34,37 @@ static void print_main_menu(int opt) {
 }//end function
 
 /* * * PUBLIC FUNCTIONS * * */
+
+int set_term()
+{
+	int rc;
+	struct termios *tmp;
+	const struct termios *game_term;
+
+	orig = (struct termios *) calloc(1, sizeof(struct termios));
+	
+	rc = tcgetattr(STDIN_FILENO, orig);
+	if(rc) {
+		dbg("Couldn't get terminalio attributes\n");
+		return -1;
+	}
+
+	tmp = orig;
+	tmp->c_lflag &= ~(ICANON);	// bitwise and with complement of ICANON setting, to unset default ICANON
+								// man 3 termios
+								// In noncanonical mode input is available immediately
+								// ie, user doesn't have to type a line-delimiter
+
+	game_term = tmp;
+
+	rc = tcsetattr(STDIN_FILENO, TCSANOW, game_term);
+	if(rc) {
+		dbg("Failed to set TCSANOW flag\n");
+		return -1;
+	}
+		
+	return 1;
+}
 
 /*
  * TODO: Fix double entering arrow keys problem
@@ -86,7 +120,7 @@ int start_game(void)
 				default:
 					break;
 			}//end switch
-			getchar();//skip last newline
+	//		getchar();//skip last newline
 
 		} else if( c != '\n') {
 			// If person did not ONLY hit enter

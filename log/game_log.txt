@@ -1,11 +1,11 @@
-14:58:55 [DEBUG] start_game.c [63]: Up arrow pressed
-14:58:57 [DEBUG] start_game.c [63]: Up arrow pressed
-14:58:59 [DEBUG] start_game.c [70]: Down arrow pressed
-14:59:00 [DEBUG] start_game.c [70]: Down arrow pressed
-14:59:04 [DEBUG] start_game.c [63]: Up arrow pressed
-14:59:06 [DEBUG] start_game.c [70]: Down arrow pressed
-14:59:14 [DEBUG] start_game.c [70]: Down arrow pressed
-15:06:17 [DEBUG] start_game.c [63]: Up arrow pressed
-15:06:18 [DEBUG] start_game.c [63]: Up arrow pressed
-15:06:19 [DEBUG] start_game.c [70]: Down arrow pressed
-15:06:20 [DEBUG] start_game.c [63]: Up arrow pressed
+12:09:44 [DEBUG] game.c [17]: Terminal environment set :)!
+12:09:45 [DEBUG] start_game.c [95]: Up arrow pressed
+12:09:45 [DEBUG] start_game.c [95]: Up arrow pressed
+12:09:46 [DEBUG] start_game.c [95]: Up arrow pressed
+12:09:46 [DEBUG] start_game.c [95]: Up arrow pressed
+12:09:46 [DEBUG] start_game.c [95]: Up arrow pressed
+12:09:46 [DEBUG] start_game.c [102]: Down arrow pressed
+12:09:47 [DEBUG] start_game.c [102]: Down arrow pressed
+12:09:47 [DEBUG] start_game.c [102]: Down arrow pressed
+12:09:47 [DEBUG] start_game.c [102]: Down arrow pressed
+12:09:47 [DEBUG] start_game.c [102]: Down arrow pressed

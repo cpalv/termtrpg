@@ -10,6 +10,13 @@ int main(void)
 {
 	int rc;
 
+	rc = set_term();
+	if(rc < 1) {
+		dbg("%s [DEBUG] %s [%d]: Unable to correctly set terminal\n", gettimestamp(), __FILE__, __LINE__);
+	}
+	dbg("%s [DEBUG] %s [%d]: Terminal environment set :)!\n", gettimestamp(), __FILE__, __LINE__);
+
+
 	rc = start_game();
 	dbg("%s [DEBUG] %s [%d]: Received return code of [%d]\n", gettimestamp(), __FILE__, __LINE__, rc);
 
